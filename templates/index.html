@@ -1,6 +1,6 @@
 {% extends 'layout.html' %}
 
-{% block content %}
+{% block body %}
     <h1>Task Manager</h1>
     <form action="/add" method="POST">
         <input type="text" name="title" placeholder="Enter a task" required>
@@ -13,10 +13,15 @@
                     <strike>{{ task.title }}</strike>
                 {% else %}
                     {{ task.title }}
-                    <a href="{{ url_for('complete', task_id=task.id) }}">Complete</a>
+                    <form action="/complete/{{ task.id }}" method="POST" style="display:inline;">
+                        <input type="submit" value="Complete">
+                    </form>
                 {% endif %}
-                <a href="{{ url_for('delete', task_id=task.id) }}">Delete</a>
+                <form action="/delete/{{ task.id }}" method="POST" style="display:inline;">
+                    <input type="submit" value="Delete">
+                </form>
             </li>
         {% endfor %}
     </ul>
 {% endblock %}
+

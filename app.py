@@ -26,27 +26,25 @@ def index():
     tasks = Task.query.all()
     return render_template('index.html', tasks=tasks)
 
-@app.route('/add', methods=['POST'])
+@app.route('/add', methods=['GET','POST'])
 def add():
     title = request.form.get('title')
     new_task = Task(title=title, complete=False)
     db.session.add(new_task)
     db.session.commit()
     return redirect(url_for('index'))
-
-@app.route('/complete/<int:task_id>')
+    
+@app.route('/complete/<int:task_id>', methods = ['POST'])
 def complete(task_id):
     task = Task.query.get(task_id)
     task.complete = True
     db.session.commit()
     return redirect(url_for('index'))
-
-@app.route('/delete/<int:task_id>')
+@app.route('/delete/<int:task_id>', methods = ['POST'])
 def delete(task_id):
     task = Task.query.get(task_id)
     db.session.delete(task)
     db.session.commit()
     return redirect(url_for('index'))
-
 if __name__ == '__main__':
     app.run(debug=True)
