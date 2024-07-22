@@ -1,154 +1,95 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f8f9fa;
+/* Add margin and padding resets */
+body, html {
     margin: 0;
     padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+/* Ensure the form container is centered */
+.container {
+    margin-top: 20px;
+}
+
+/* Style form fields */
+.form-control {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+/* Center the form container on the login and register pages */
+.container.d-flex {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
 
-.container {
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 1000px;
-    text-align: center;
+/* Style the buttons */
+.btn {
+    margin-bottom: 15px;
 }
 
-h1 {
-    margin: 0 0 20px 0;
-}
-
-form {
+/* Align the Add New Task button to the right */
+.d-flex.justify-content-between {
     margin-bottom: 20px;
 }
 
-input[type="text"] {
-    width: 70%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-}
-
-input[type="submit"] {
-    padding: 10px 20px;
-    border: none;
-    background-color: #007bff;
-    color: white;
-    border-radius: 3px;
-    cursor: pointer;
-}
-
-input[type="submit"]:hover {
-    background-color: #0056b3;
-}
-
-ul {
-    list-style: none;
-    padding: 0;
-}
-
-li {
-    margin: 10px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-strike {
-    color: #999;
-}
-
-form {
-    display: inline;
-}
-
-button {
-    padding: 5px 10px;
-    border: none;
-    background-color: #007bff;
-    color: white;
-    border-radius: 3px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
-.low {
-    background-color: #d4edda;
-    color: #155724;
-}
-
-.medium {
-    background-color: #fff3cd;
-    color: #856404;
-}
-
-.high {
-    background-color: #f8d7da;
-    color: #721c24;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
-
-th, td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-}
-
-th {
-    background-color: #f2f2f2;
-}
-
-form {
-    display: inline;
-}
-/* Custom styles here */
-body {
-    padding-top: 20px;
-}
-
-.navbar-brand {
-    font-weight: bold;
-}
-
-/* Ensure input fields are the same width */
-input.form-control {
-    width: 100%;
-}
-/* Reset default padding and margins */
-body, html {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-}
-
-/* Ensure the table takes the full width of the viewport */
+/* Style the table */
 .table {
     width: 100%;
+    margin-bottom: 1rem;
+    color: #212529;
 }
 
-/* Remove background and borders from any card or container elements */
-.card, .card-body {
-    background: none;
-    border: none;
-    box-shadow: none;
-    padding: 0;
+.table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #dee2e6;
 }
 
-/* Ensure that no container or wrapper adds padding or margins */
-.container, .navbar {
-    padding: 0;
-    margin: 0;
+.table tbody + tbody {
+    border-top: 2px solid #dee2e6;
+}
+
+/* Ensure the navbar is fixed at the top */
+.navbar-fixed {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1030; /* Ensure it is above other content */
+}
+
+/* Add padding to the body to avoid overlap with fixed navbar */
+body {
+    padding-top: 56px; /* Adjust this value based on the height of your navbar */
+}
+
+/* Align navbar content to the right */
+.navbar-nav {
+    margin-left: auto;
+}
+
+.navbar-nav .nav-item {
+    margin-left: 15px;
+}
+
+/* Align logout button to the right in the navbar */
+.navbar-nav .nav-item .nav-link {
+    margin-left: auto;
+}
+
+/* Style the priority levels with different colors */
+.badge-high {
+    background-color: #dc3545 !important; /* Red for High priority */
+    color: white !important;
+}
+
+.badge-medium {
+    background-color: #ffc107 !important; /* Yellow for Medium priority */
+    color: black !important;
+}
+
+.badge-low {
+    background-color: #28a745 !important; /* Green for Low priority */
+    color: white !important;
 }

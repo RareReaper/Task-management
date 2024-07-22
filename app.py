@@ -67,7 +67,7 @@ def add():
         return redirect(url_for('index'))
     return render_template('add.html')
 
-@app.route('/complete/<int:task_id>', methods=['POST'])
+@app.route('/complete/<int:task_id>', methods=['GET','POST'])
 @login_required
 def complete(task_id):
     task = Task.query.filter_by(id=task_id, user_id=current_user.id).first()
@@ -76,7 +76,7 @@ def complete(task_id):
         db.session.commit()
     return redirect(url_for('index'))
 
-@app.route('/delete/<int:task_id>', methods=['POST'])
+@app.route('/delete/<int:task_id>', methods=['GET','POST'])
 @login_required
 def delete(task_id):
     task = Task.query.filter_by(id=task_id, user_id=current_user.id).first()
