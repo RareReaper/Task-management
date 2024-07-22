@@ -1,2 +1,8 @@
-The purpose of this project is to create an web application using flask, to allow users to effectively managing their tasks.
-It aims to provide priority levels, due dates, and integration into their respective calendar apps
+# Task Management Web Application
+#### Video Demo:  <URL HERE>
+#### Description:
+This is a web application designed using flask, and javascript, which allows a user to manage their activities and tasks in a orderly manner, and complete them within the defined time period.
+This includes:
+  1. Setting priority levels for each task.
+  2. Defining a due date for each task.
+The user can then complete this task, or delete it which is up to their discretion. The project uses SQLAlchemy as it's ORM(Object Relation Manager) which makes running SQL queries much simpler and less prone to SQL injection attacks, while being fully scalable to production level software.
